@@ -1,0 +1,5 @@
+{% extends 'patients/base.html' %}
+
+{% block content %}
+    <input type='hidden' name='next' value="{% url 'patients:index' %}" />
+{% endblock content %}
