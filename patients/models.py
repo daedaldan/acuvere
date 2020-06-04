@@ -14,15 +14,17 @@ class Patient(models.Model):
     ]
 
     user = models.OneToOneField(User, related_name="patient", blank=True, on_delete=models.CASCADE)
+    first_name = models.CharField(max_length=100)
+    last_name = models.CharField(max_length=100)
+    email = models.EmailField(max_length=150)
     birth_date = models.DateField(null=True)
     gender = models.CharField(max_length=10, choices=GENDER_CHOICES)
 
     @receiver(post_save, sender=User)
     def create_save_user_profile(sender, instance, created, **kwargs):
-        try:
-            instance.patient.save()
-        except ObjectDoesNotExist:
+        if created:
             Patient.objects.create(user=instance)
+        instance.patient.save()
 
 
 class Appointment(models.Model):

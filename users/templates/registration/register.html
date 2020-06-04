@@ -4,8 +4,7 @@
     <form method='post' action="{% url 'users:register' %}">
 
         {% csrf_token %}
-        {{ user_form.as_p }}
-        {{ patient_form.as_p }}
+        {{ form.as_p }}
 
         <button name='submit'>Register</button>
         <input type='hidden' name='next' value="{% url 'patients:index' %}" />
