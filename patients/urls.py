@@ -7,6 +7,7 @@ urlpatterns = [
     # Home page
     path('', views.index, name='index'),
     path('health/', views.health, name='health'),
+    path('biometrics/', views.biometrics, name='biometrics'),
     path('appointments/', views.appointments, name='appointments'),
     path('tasks/', views.tasks, name='tasks'),
 ]

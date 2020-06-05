@@ -1,5 +1,28 @@
 {% extends 'patients/base.html' %}
 
 {% block content %}
-    <p>This is the appointments page. (in progress)</p>
+    <h1>Upcoming Appointments</h1>
+    {% if appointments %}
+        {% for appointment in appointments %}
+            <div class="card-border">
+                <div class="card">
+                    <h3>{{ appointment.location }}</h3>
+                    <p>{{ appointment.date}}, {{ appointment.time }}</p>
+                    <p>{{ appointment.description }}</p>
+                </div>
+            </div>
+        {% endfor %}
+    {% else %}
+        <p>No upcoming appointments.</p>
+    {% endif %}
+    <h1>Message Your Doctor</h1>
+    <form>
+        <label for="recipient">Doctor's Name</label><br>
+        <input type="text" name="recipient"><br>
+        <label for="subject">Subject</label><br>
+        <input type="text" name="subject"><br>
+        <label for="message">Message</label><br>
+        <textarea type="text" name="message"></textarea><br>
+        <input type="submit" class="form-submit">
+    </form>
 {% endblock content %}

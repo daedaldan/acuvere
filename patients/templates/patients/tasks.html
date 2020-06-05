@@ -1,5 +1,18 @@
 {% extends 'patients/base.html' %}
 
 {% block content %}
-    <p>This is the tasks page. (in progress)</p>
+    <h1>Tasks</h1>
+    {% if tasks %}
+        {% for task in tasks %}
+            <div class="card-border">
+                <div class="card">
+                    <h3>{{ task.name }}</h3>
+                    <p>{{ task.frequency }}</p>
+                    <p>{{ task.description }}</p>
+                </div>
+            </div>
+        {% endfor %}
+    {% else %}
+        <p>No tasks assigned.</p>
+    {% endif %}
 {% endblock content %}
