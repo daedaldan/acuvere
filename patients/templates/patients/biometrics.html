@@ -1,5 +1,32 @@
 {% extends 'patients/base.html' %}
 
 {% block content %}
-    <p>This is the biometrics page. (in progress)</p>
+    <head>
+        <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+<!--        <script type='text/javascript' src='https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js'>-->
+<!--            $(document).ready(function(){-->
+<!--              $(":button .temp-button").click(function(e) {-->
+<!--                $(".hr").replaceWith($(".temp"));-->
+<!--              });-->
+<!--            });-->
+<!--        </script>-->
+    </head>
+    <body>
+<!--        <button class="hr-button">Heart Rate</button>-->
+<!--        <button class="temp-button">Body Temperature</button>-->
+<!--        <button class="oxygen-button">Oxygen Saturaiton</button>-->
+<!--        <button class="glucose-button">Blood Glucose</button>-->
+        <div class="hr">
+            {{ past_day_hr|safe }}
+        </div>
+        <div class="temp">
+            {{ past_day_temp|safe }}
+        </div>
+        <div class="oxygen">
+            {{ past_day_oxygen|safe }}
+        </div>
+        <div class="glucose">
+            {{ past_day_glucose|safe }}
+        </div>
+    </body>
 {% endblock content %}
