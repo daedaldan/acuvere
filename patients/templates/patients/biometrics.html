@@ -3,19 +3,76 @@
 {% block content %}
     <head>
         <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
-<!--        <script type='text/javascript' src='https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js'>-->
-<!--            $(document).ready(function(){-->
-<!--              $(":button .temp-button").click(function(e) {-->
-<!--                $(".hr").replaceWith($(".temp"));-->
-<!--              });-->
-<!--            });-->
-<!--        </script>-->
+        <script type='text/javascript' src='https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js'></script>
+        <script type="text/javascript">
+          $(document).ready(function() {
+            $(".temp").hide();
+            $(".oxygen").hide();
+            $(".glucose").hide();
+            $(".hr").is(":visible").then(
+                $(".temp-button").click(function() {
+                  $(".temp").show();
+                  $(".hr").hide();
+                }),
+                $(".oxygen-button").click(function() {
+                  $(".oxygen").show();
+                  $(".hr").hide();
+                }),
+                $(".glucose-button").click(function() {
+                  $(".glucose").show();
+                  $(".hr").hide();
+                })
+            );
+            $(".temp").is(":visible").then(
+                $(".hr-button").click(function() {
+                  $(".hr").show();
+                  $(".temp").hide();
+                }),
+                $(".oxygen-button").click(function() {
+                  $(".oxygen").show();
+                  $(".temp").hide();
+                }),
+                $(".glucose-button").click(function() {
+                  $(".glucose").show();
+                  $(".temp").hide();
+                })
+            );
+            $(".oxygen").is(":visible").then(
+                $(".hr-button").click(function() {
+                  $(".hr").show();
+                  $(".oxygen").hide();
+                }),
+                $(".temp-button").click(function() {
+                  $(".temp").show();
+                  $(".oxygen").hide();
+                }),
+                $(".glucose-button").click(function() {
+                  $(".glucose").show();
+                  $(".oxygen").hide();
+                })
+            );
+            $(".glucose").is(":visible").then(
+                $(".hr-button").click(function() {
+                  $(".hr").show();
+                  $(".glucose").hide();
+                }),
+                $(".temp-button").click(function() {
+                  $(".temp").show();
+                  $(".glucose").hide();
+                }),
+                $(".oxygen-button").click(function() {
+                  $(".oxygen").show();
+                  $(".glucose").hide();
+                })
+            );
+          });
+        </script>
     </head>
     <body>
-<!--        <button class="hr-button">Heart Rate</button>-->
-<!--        <button class="temp-button">Body Temperature</button>-->
-<!--        <button class="oxygen-button">Oxygen Saturaiton</button>-->
-<!--        <button class="glucose-button">Blood Glucose</button>-->
+        <button class="hr-button">Heart Rate</button>
+        <button class="temp-button">Body Temperature</button>
+        <button class="oxygen-button">Oxygen Saturation</button>
+        <button class="glucose-button">Blood Glucose</button>
         <div class="hr">
             {{ past_day_hr|safe }}
         </div>
