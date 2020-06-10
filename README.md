@@ -5,7 +5,7 @@ The COVID-19 pandemic has overwhelmed hospitals around the world, and the strugg
 This health care app allows for patients to share personal biometrics from common health devices (such as Fitbit, Google Fit, etc.) with health care providers, who can then recommend exercises for the patient to follow to improve their health, based on their current health condition and goals. Patients and doctors can also view the patient’s change in biometrics over time through graphs created by the app. Patients have the ability to view upcoming appointments and contact their doctors directly within the app as well.
 
 ## To use the app
-Method 1:  
+### Method 1
 
 http://acuvere.herokuapp.com  
 
@@ -13,8 +13,7 @@ Username: testuser
 
 Password: healthisgr8  
 
-
-Method 2:  
+### Method 2
 
 `$ source ll_env/bin/activate`  
 
