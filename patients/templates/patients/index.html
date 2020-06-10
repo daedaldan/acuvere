@@ -1,6 +1,16 @@
 {% extends 'patients/base.html' %}
 
+{% load static %}
+
 {% block content %}
-    <h1>Acuvere</h1>
-    <p>A healthcare app by Gaurav Mittal and Daniel Wang.</p>
+    <div class="jumbotron">
+      <h1>Acuvére</h1>
+      <h3>Together, we can change patient-doctor connection.</h3>
+      <p>Have your personal health care provider remotely monitor your biometrics.</p>
+      <img class="jumbotron-image" src="{% static 'patients/doctor.jpg' %}" alt="Illustration of patient and doctor">
+<!--  image is from https://dribbble.com/shots/4155830-doctor?utm_source=Pinterest_Shot&utm_campaign=darksiders&utm_content=doctor&utm_medium=Social_Share-->
+    </div>
+    <footer>
+        <p>Gaurav Mittal and Daniel Wang, 2020</p>
+    </footer>
 {% endblock content %}

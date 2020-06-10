@@ -1,0 +1,1 @@
+web: gunicorn acuvere.wsgi --log-file -

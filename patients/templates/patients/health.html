@@ -1,43 +1,48 @@
 {% extends 'patients/base.html' %}
 
 {% block content %}
-    <h1>Hello, {{user.patient.first_name}}.</h1>
-    <p>HR: {{ average_HR|floatformat:1 }} Temp: {{ average_temp|floatformat:1 }} O2: {{ average_O2|floatformat:1 }}
-        Glucose: {{ average_glucose|floatformat:1 }}</p>
-    <h1>Upcoming Appointments</h1>
-    {% if appointments %}
-        {% for appointment in appointments %}
-            {% if forloop.counter <= 3 %}
-                <div class="card-border">
-                    <div class="card">
-                        <h3>{{ appointment.location }}</h3>
-                        <p>{{ appointment.date}}, {{ appointment.time }}</p>
-                        <p>{{ appointment.description }}</p>
+    <head>
+        <meta charset="UTF-8">
+    </head>
+    <body>
+        <h1>Hello, {{user.patient.first_name}}.</h1>
+        <p><strong>HR</strong> {{ average_HR|floatformat:1 }} <strong>Temp</strong> {{ average_temp|floatformat:1 }} <strong>O2</strong> {{ average_O2|floatformat:1 }}
+            <strong>Glucose</strong> {{ average_glucose|floatformat:1 }}</p>
+        <h1>Upcoming Appointments</h1>
+        {% if appointments %}
+            {% for appointment in appointments %}
+                {% if forloop.counter <= 3 %}
+                    <div class="card-border">
+                        <div class="card">
+                            <h3>{{ appointment.location }}</h3>
+                            <p>{{ appointment.date}}, {{ appointment.time }}</p>
+                            <p>{{ appointment.description }}</p>
+                        </div>
                     </div>
-                </div>
-            {% endif %}
-        {% endfor %}
-    {% else %}
-        <p>No upcoming appointments.</p>
-    {% endif %}
-    <h1>Tasks</h1>
-    {% if tasks %}
-        {% for task in tasks %}
-            {% if forloop.counter <= 3 %}
-                <div class="card-border">
-                    <div class="card">
-                        <h3>{{ task.name }}</h3>
-                        <p>{{ task.frequency }}</p>
-                        {% if task.description|length > 60 %}
-                            <p>{{ task.description|truncatechars:60 }}</p>
-                        {% else %}
-                            <p>{{ task.description }}</p>
-                        {% endif %}
+                {% endif %}
+            {% endfor %}
+        {% else %}
+            <p>No upcoming appointments.</p>
+        {% endif %}
+        <h1>Tasks</h1>
+        {% if tasks %}
+            {% for task in tasks %}
+                {% if forloop.counter <= 3 %}
+                    <div class="card-border">
+                        <div class="card">
+                            <h3>{{ task.name }}</h3>
+                            <p>{{ task.frequency }}</p>
+                            {% if task.description|length > 60 %}
+                                <p>{{ task.description|truncatechars:60 }}</p>
+                            {% else %}
+                                <p>{{ task.description }}</p>
+                            {% endif %}
+                        </div>
                     </div>
-                </div>
-            {% endif %}
-        {% endfor %}
-    {% else %}
-        <p>No tasks assigned.</p>
-    {% endif %}
+                {% endif %}
+            {% endfor %}
+        {% else %}
+            <p>No tasks assigned.</p>
+        {% endif %}
+    </body>
 {% endblock content %}
