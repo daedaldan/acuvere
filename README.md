@@ -1,20 +1,30 @@
 # Acuvere
+## Background
 The COVID-19 pandemic has overwhelmed hospitals around the world, and the struggles healthcare workers are facing has drawn much attention. However, while many projects have been created to ease the stress on healthcare systems fighting COVID, many have overlooked the impact of the pandemic on patients whose appointments, procedures, and general health needs have been neglected. Furthermore, as the spread of the virus continues to slow, hundreds of thousands of patients around the world will be recovering from COVID and face their own unique challenges. Acuvere is meant to support everyday people with semi-urgent health conditions and COVID patients going through the rehabilitation process via an online platform centered around patient biometric data.
 
 This health care app allows for patients to share personal biometrics from common health devices (such as Fitbit, Google Fit, etc.) with health care providers, who can then recommend exercises for the patient to follow to improve their health, based on their current health condition and goals. Patients and doctors can also view the patient’s change in biometrics over time through graphs created by the app. Patients have the ability to view upcoming appointments and contact their doctors directly within the app as well.
 
 ## To use the app
-Method 1:
-http://acuvere.herokuapp.com
-Username: testuser
-Password: healthisgr8
+Method 1:  
 
-Method 2:
-`$ source ll_env/bin/activate
-(ll_env)$ pip install -r requirements.txt
-python manage.py migrate
-python manage.py createsuperuser
-python manage.py runserver`
+http://acuvere.herokuapp.com  
+
+Username: testuser  
+
+Password: healthisgr8  
+
+
+Method 2:  
+
+`$ source ll_env/bin/activate`  
+
+`(ll_env)$ pip install -r requirements.txt`  
+
+`python manage.py migrate`  
+
+`python manage.py createsuperuser`  
+
+`python manage.py runserver`
 
 The superuser can be used to create appointments and tasks for patients created via the user interface. If there are any errors with these instructions or issues using the app, please let us know.
 
